@@ -97,10 +97,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="RefletivePShader.hlsl" />
     <FxCompile Include="RefletiveVShader.hlsl" />
     <FxCompile Include="SkyboxPShader.hlsl" />
     <FxCompile Include="SkyboxVShader.hlsl" />
+    <FxCompile Include="ReflectivePShader.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

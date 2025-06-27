@@ -27,9 +27,11 @@ private:
 
 	struct PointLight
 	{
-		DirectX::XMVECTOR position = { 0, 0, 0, 1 }; // 16 bytes
-		DirectX::XMVECTOR colour = { 1, 1, 1, 1 };   // 16 bytes
-		// Total = 48 bytes
+		DirectX::XMFLOAT3 position = { 0.f, 0.f, 0.f }; // 12 bytes
+		float strength = 1.0f;                          // 4 bytes
+
+		DirectX::XMFLOAT3 colour = { 1.f, 1.f, 1.f };  // 12 bytes
+		float padding = 0.f;                            // 4 bytes (to align to 16 bytes)
 	};
 
 	struct SkyboxTransformBuffer

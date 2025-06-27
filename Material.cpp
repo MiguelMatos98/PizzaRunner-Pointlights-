@@ -3,15 +3,15 @@
 Material::Material()
     : m_Texture{ nullptr },
     m_SamplerState{ nullptr },
-    opacity{0.0f},
-    refractionIndex{ 1.0f },
+    opacity{ 1.0f },              // Fully opaque by default
+    refractionIndex{ 1.0f },   // Typical default refractive index for air (~1.0)
     m_DiffuseColor{ 1.0f, 1.0f, 1.0f, 1.0f },
-    specularColor{ 1.0f, 1.0f, 1.0f, 1.0f }, // Brighter specular emmision
-    shininess{ 0.9f }, // Higher shininess
+    specularColor{ 1.0f, 1.0f, 1.0f, 1.0f },
+    shininess{ 0.9f },
     metallic{ 0.0f },
-    roughness{ 0.f },
+    roughness{ 0.5f },          // Some roughness to avoid perfect mirror by default
     glossiness{ 0.0f },
-    reflectionStrength{ 1.0f }
+    reflectionStrength{ 0.0f }  // No reflection by default (adjust if needed)
 {
 }
 

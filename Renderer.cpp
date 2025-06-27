@@ -682,8 +682,10 @@ void Renderer::RenderFrame()
 
 		for (size_t j = 0; j < MAX_POINT_LIGHTS; ++j)
 		{
-			MaterialLightingData.pointLights[j].position = XMVector3Transform(pointLights[j].position, view);
+			MaterialLightingData.pointLights[j].position = pointLights[j].position;  // If pointLights[j].position is XMFLOAT3
+			MaterialLightingData.pointLights[j].strength = pointLights[j].strength;
 			MaterialLightingData.pointLights[j].colour = pointLights[j].colour;
+			MaterialLightingData.pointLights[j].padding = 0.f; // always zero
 		}
 
 		// Update material properties

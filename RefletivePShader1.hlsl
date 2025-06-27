@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////
 // Reflective Pixel Shader (Lighting + Reflections)
 ///////////////////////////////////////////////////////////
 TextureCube skyboxTexture : register(t0); // Skybox texture for reflections
@@ -101,8 +101,9 @@ float4 main(VIn input) : SV_Target
     reflectionComponent.rgb += specularHighlight;
 
                                                                                                                                                                     // Relection streng not being passed properly
-    return saturate(lerp(saturate(reflectionComponent + float4(pointFinal, 0.0f) + diffuseComponent + (1 - diffuseMask) * ambientLightCol * diffuseColor * sampled), reflectedSampled, FersenelMask * reflectionStrength) * (1 - emision) + emision * diffuseColor * sampled);
+    return saturate(lerp(saturate(reflectionComponent + diffuseComponent + (1 - diffuseMask) * ambientLightCol * diffuseColor * sampled), reflectedSampled, FersenelMask * reflectionStrength) * (1 - emision) + float4(emision * diffuseColor * sampled.rgb, sampled.a) + float4(pointFinal * (1 - emision), 0.0f));
 
+   // return saturate(float4(pointFinal, 1.0f));
 }
 
 

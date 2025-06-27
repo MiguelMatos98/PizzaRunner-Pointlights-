@@ -86,8 +86,8 @@ void GameManager::LoadGame()
 		}
 	}
 
-	gameRenderer->pointLights[0] = { {2.5f, 1, 0}, {0.0f, 1.0f, 0.0f, 1.0f} };
-	gameRenderer->pointLights[1] = { {0, 1, 20}, {1.0f, 0.0f, 1.0f, 1.0f} };
+	gameRenderer->pointLights[0] = { {2.5f, 1.f, 0.f}, 1.0f, {0.0f, 1.0f, 0.0f}, 0.f };
+	gameRenderer->pointLights[1] = { {0.f, 1.f, 20.f}, 1.0f, {0.0f, 0.0f, 1.0f}, 0.f };
 
 	//delete currentMesh;
 	// currentMesh = nullptr;
